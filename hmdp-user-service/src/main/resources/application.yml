@@ -1,0 +1,22 @@
+# ===== 引导配置 =====
+# 本地只保留"启动期必需"的项：应用名、Nacos 地址、要导入哪些配置。
+# 端口 / 数据源 / redis / mybatis-plus / 内部凭据等业务配置全部托管在 Nacos 配置中心（DEFAULT_GROUP）。
+spring:
+  application:
+    name: hmdp-user-service
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+  config:
+    # 先导入公共配置，再导入本服务配置；?refreshEnabled=true 表示支持动态刷新
+    import:
+      - nacos:hmdp-common.yaml?refreshEnabled=true
+      - nacos:hmdp-user-service.yaml?refreshEnabled=true
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
