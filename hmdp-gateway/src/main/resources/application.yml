@@ -1,0 +1,20 @@
+# ===== 引导配置 =====
+# 本地只保留"启动期必需"的项：应用名、Nacos 地址、要导入哪些配置。
+# 端口 / 网关路由等全部托管在 Nacos 配置中心（DEFAULT_GROUP）。
+spring:
+  application:
+    name: hmdp-gateway
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+  config:
+    import:
+      - nacos:hmdp-gateway.yaml?refreshEnabled=true
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.javaup</groupId>
+        <artifactId>hmdp-plus</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>hmdp-api</artifactId>
+    <name>hmdp-api</name>
+    <description>跨服务契约：Feign 接口与共享 DTO</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.javaup</groupId>
+            <artifactId>hmdp-common</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
